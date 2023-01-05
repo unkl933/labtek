@@ -14,11 +14,11 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/backup"
+labtekvpn="raw.githubusercontent.com/unkl933/labtek/labtek/backup"
 
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://${akbarvpn}/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://${labtekvpn}/rclone.conf"
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 make install
@@ -43,11 +43,11 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://${akbarvpn}/autobackup.sh"
-wget -O backup "https://${akbarvpn}/backup.sh"
-wget -O restore "https://${akbarvpn}/restore.sh"
-wget -O strt "https://${akbarvpn}/strt.sh"
-wget -O limitspeed "https://${akbarvpn}/limitspeed.sh"
+wget -O autobackup "https://${labtekvpn}/autobackup.sh"
+wget -O backup "https://${labtekvpn}/backup.sh"
+wget -O restore "https://${labtekvpn}/restore.sh"
+wget -O strt "https://${labtekvpn}/strt.sh"
+wget -O limitspeed "https://${labtekvpn}/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore

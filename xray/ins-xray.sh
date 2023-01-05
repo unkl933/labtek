@@ -54,7 +54,7 @@ wget https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
 bash acme.sh --install
 rm acme.sh
 cd .acme.sh
-bash acme.sh --register-account -m senowahyu62@gmail.com
+bash acme.sh --register-account -m clashteam.id@gmail.com
 bash acme.sh --issue --standalone -d $domain --force
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
 
@@ -344,7 +344,7 @@ END
 # / / Installation Xray Service
 cat > /etc/systemd/system/xray.service << END
 [Unit]
-Description=Xray Service Mod By SL
+Description=Xray Service Mod By Aufr
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 

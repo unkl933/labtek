@@ -14,16 +14,16 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssh"
+akbarvpn="raw.githubusercontent.com/unkl933/labtek/labtek/ssh"
 
 # Link Hosting Kalian Untuk Xray
-akbarvpnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/xray"
+akbarvpnn="raw.githubusercontent.com/unkl933/labtek/labtek/xray"
 
 # Link Hosting Kalian Untuk Trojan Go
-akbarvpnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/trojango"
+akbarvpnnn="raw.githubusercontent.com/unkl933/labtek/labtek/trojango"
 
 # Link Hosting Kalian Untuk Stunnel5
-akbarvpnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/stunnel5"
+akbarvpnnnn="raw.githubusercontent.com/unkl933/labtek/labtek/stunnel5"
 
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -40,7 +40,7 @@ locality=Indonesia
 organization=infinity
 organizationalunit=infinity
 commonname=localhost
-email=hayuk69@gmail.com
+email=clashteam.id@gmail.com
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://${akbarvpn}/password"
@@ -186,9 +186,9 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # install squid (proxy nya aku matikan)
 cd
-#apt -y install squid3
-#wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
-#sed -i $MYIP2 /etc/squid/squid.conf
+apt -y install squid3
+wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
+sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
 apt -y install sslh
@@ -281,17 +281,17 @@ connect = 127.0.0.1:1194
 END
 
 # make a certificate
-#openssl genrsa -out key.pem 2048
-#openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
-#-subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
-#cat key.pem cert.pem >> /etc/stunnel5/stunnel5.pem
+openssl genrsa -out key.pem 2048
+openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
+-subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
+cat key.pem cert.pem >> /etc/stunnel5/stunnel5.pem
 
 # Service Stunnel5 systemctl restart stunnel5
 cat > /etc/systemd/system/stunnel5.service << END
 [Unit]
 Description=Stunnel5 Service
 Documentation=https://stunnel.org
-Documentation=https://github.com/Akbar218
+Documentation=https://github.com/unkl933
 After=syslog.target network-online.target
 
 [Service]
@@ -316,7 +316,7 @@ rm -r -f /usr/local/etc/stunnel/
 rm -f /usr/local/bin/stunnel
 rm -f /usr/local/bin/stunnel3
 rm -f /usr/local/bin/stunnel4
-#rm -f /usr/local/bin/stunnel5
+rm -f /usr/local/bin/stunnel5
 
 # Restart Stunnel 5
 systemctl stop stunnel5
@@ -347,7 +347,7 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Install BBR
-#wget https://${akbarvpn}/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://${akbarvpn}/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # Ganti Banner
 wget -O /etc/issue.net "https://${akbarvpn}/issue.net"
@@ -374,7 +374,7 @@ cd /usr/bin
 wget -O addhost "https://${akbarvpn}/addhost.sh"
 wget -O slhost "https://${akbarvpn}/slhost.sh"
 wget -O about "https://${akbarvpn}/about.sh"
-wget -O menu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/menu.sh"
+wget -O menu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/menu.sh"
 wget -O addssh "https://${akbarvpn}/addssh.sh"
 wget -O trialssh "https://${akbarvpn}/trialssh.sh"
 wget -O delssh "https://${akbarvpn}/delssh.sh"
@@ -421,28 +421,28 @@ wget -O addtrgo "https://${akbarvpnnn}/addtrgo.sh"
 wget -O deltrgo "https://${akbarvpnnn}/deltrgo.sh"
 wget -O renewtrgo "https://${akbarvpnnn}/renewtrgo.sh"
 wget -O cektrgo "https://${akbarvpnnn}/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/websocket/portsshws.sh"
+wget -O portsshnontls "https://raw.githubusercontent.com/unkl933/labtek/labtek/websocket/portsshnontls.sh"
+wget -O portsshws "https://raw.githubusercontent.com/unkl933/labtek/labtek/websocket/portsshws.sh"
 
-wget -O ipsaya "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/ipsaya.sh"
-wget -O sshovpnmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/sshovpn.sh"
-wget -O l2tpmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/l2tpmenu.sh"
-wget -O pptpmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/pptpmenu.sh"
-wget -O sstpmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/sstpmenu.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/wgmenu.sh"
-wget -O ssmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/ssmenu.sh"
-wget -O ssrmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/ssrmenu.sh"
-wget -O vmessmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/vmessmenu.sh"
-wget -O vlessmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/vlessmenu.sh"
-wget -O grpcmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/grpcmenu.sh"
-wget -O grpcupdate "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/grpcupdate.sh"
-wget -O trmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/trmenu.sh"
-wget -O trgomenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/trgomenu.sh"
-wget -O setmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/setmenu.sh"
-wget -O slowdnsmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/slowdnsmenu.sh"
-wget -O running "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/running.sh"
-wget -O updatemenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/updatemenu.sh"
-wget -O sl-fix "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/sslh-fix/sl-fix"
+wget -O ipsaya "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/ipsaya.sh"
+wget -O sshovpnmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/sshovpn.sh"
+wget -O l2tpmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/l2tpmenu.sh"
+wget -O pptpmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/pptpmenu.sh"
+wget -O sstpmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/sstpmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/wgmenu.sh"
+wget -O ssmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/ssmenu.sh"
+wget -O ssrmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/ssrmenu.sh"
+wget -O vmessmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/vmessmenu.sh"
+wget -O vlessmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/vlessmenu.sh"
+wget -O grpcmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/grpcmenu.sh"
+wget -O grpcupdate "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/grpcupdate.sh"
+wget -O trmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/trmenu.sh"
+wget -O trgomenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/trgomenu.sh"
+wget -O setmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/setmenu.sh"
+wget -O slowdnsmenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/slowdnsmenu.sh"
+wget -O running "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/running.sh"
+wget -O updatemenu "https://raw.githubusercontent.com/unkl933/labtek/labtek/update/updatemenu.sh"
+wget -O sl-fix "https://raw.githubusercontent.com/unkl933/labtek/labtek/sslh-fix/sl-fix"
 
 chmod +x sl-fix
 chmod +x ipsaya
