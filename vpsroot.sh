@@ -1,6 +1,6 @@
 #!/bin/bash
 # Mod By SL
-echo "$crot    ALL=(ALL:ALL) ALL" >> /etc/sudoers;
+echo "$root    ALL=(ALL:ALL) ALL" >> /etc/sudoers;
 wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/unkl933/labtek/labtek/sshd_config;
 systemctl restart sshd;
 clear;
