@@ -19,8 +19,8 @@ rm -rf /usr/bin/shadowhost
 cd /usr/bin
 wget -O addss-p "https://raw.githubusercontent.com/unkl933/labtek/labtek/shadowsocks-plugin/addss-p.sh"
 chmod +x addss-p
-wget -O shadowhost "https://raw.githubusercontent.com/funkl933/labtek/labtek/shadowsocks-plugin/shadowhost.sh"
-chmod +x shadowhost && shadowhost
+#wget -O shadowhost "https://raw.githubusercontent.com/funkl933/labtek/labtek/shadowsocks-plugin/shadowhost.sh"
+#chmod +x shadowhost && shadowhost
 wget -O delss "https://raw.githubusercontent.com/unkl933/labtek/labtek/shadowsocks/delss.sh"
 cd
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -41,14 +41,14 @@ date
 
 # / / Ambil V2ray-Plugin Core Version Terbaru
 #teddysun/v2ray-plugin/releases
-latest_versionv2ray="$(curl -s https://api.github.com/repos/teddysun/v2ray-plugin/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-latest_versionvxray="$(curl -s https://api.github.com/repos/teddysun/xray-plugin/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-versi_v2ray-plugin=$latest_versionv2ray
-versi_xray-plugin=$latest_versionxray
+#latest_versionv2ray="$(curl -s https://api.github.com/repos/teddysun/v2ray-plugin/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+#latest_versionvxray="$(curl -s https://api.github.com/repos/teddysun/xray-plugin/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+#versi_v2ray-plugin=$latest_versionv2ray
+#versi_xray-plugin=$latest_versionxray
 # / / Installation V2rayPlugin_GostPlugin_XrayPlugin
-v2rayplugin_link="https://github.com/teddysun/v2ray-plugin/releases/download/v4.44.0/v2ray-plugin-linux-arm64-v4.44.0.tar.gz"
-gostplugin_link="https://github.com/maskedeken/gost-plugin/releases/download/v1.6.1/gost-plugin_linux_arm64-1.6.1.zip"
-xrayplugin_link="https://github.com/teddysun/xray-plugin/releases/download/v1.5.4/xray-plugin-linux-arm64-v1.5.4.tar.gz"
+#v2rayplugin_link="https://github.com/teddysun/v2ray-plugin/releases/download/v4.44.0/v2ray-plugin-linux-arm64-v4.44.0.tar.gz"
+#gostplugin_link="https://github.com/maskedeken/gost-plugin/releases/download/v1.6.1/gost-plugin_linux_arm64-1.6.1.zip"
+#xrayplugin_link="https://github.com/teddysun/xray-plugin/releases/download/v1.5.4/xray-plugin-linux-arm64-v1.5.4.tar.gz"
 
 # / / Unzip Shadowsocks plugin Linux arm64
 rm -rf /usr/local/bin/v2ray-plugin
@@ -59,33 +59,33 @@ rm -rf xray-plugin
 rm -rf v2xray-plugin
 rm -rf gost-plugin
 cd /usr/bin/
-wget -O gost-plugin "https://raw.githubusercontent.com/fisabiliyusri/Shadowsocks-Plugin/main/gost-plugin"
-wget -O v2ray-plugin "https://raw.githubusercontent.com/fisabiliyusri/Shadowsocks-Plugin/main/v2ray-plugin"
-wget -O xray-plugin "https://raw.githubusercontent.com/fisabiliyusri/Shadowsocks-Plugin/main/xray-plugin"
+wget -O gost-plugin "https://raw.githubusercontent.com/unkl933/Shadowsocks-Plugin/main/gost-plugin"
+wget -O v2ray-plugin "https://raw.githubusercontent.com/unkl933/Shadowsocks-Plugin/main/v2ray-plugin"
+wget -O xray-plugin "https://raw.githubusercontent.com/unkl933/Shadowsocks-Plugin/main/xray-plugin"
 chmod +x gost-plugin
 chmod +x v2ray-plugin
 chmod +x xray-plugin
-curl -sL "$v2rayplugin_link" -o v2ray-plugin.tar.gz
-curl -sL "$gostplugin_link" -o gost-plugin.zip
-curl -sL "$xrayplugin_link" -o xray-plugin.tar.gz
-tar zxf xray-plugin.tar.gz && rm -rf xray-plugin.tar.gz
-tar zxf v2ray-plugin.tar.gz && rm -rf v2ray-plugin.tar.gz
-unzip -q gost-plugin.zip && rm -rf gost-plugin.zip
-unzip -q v2ray.zip && rm -rf v2ray.zip
-unzip -q xray.zip && rm -rf xray.zip
-cp -r xray-plugin_linux_arm64 xray-plugin
-cp -r v2ray-plugin_linux_arm64 v2ray-plugin
-cp -r v2ray-plugin /usr/local/bin/v2ray-plugin
-cp -r gost-plugin /usr/local/bin/gost-plugin
-cp -r xray-plugin /usr/local/bin/xray-plugin
-cp -r v2ray-plugin /usr/bin/v2ray-plugin
-cp -r gost-plugin /usr/bin/gost-plugin
-cp -r xray-plugin /usr/bin/xray-plugin
-rm -rf xray-plugin_linux_arm64
-rm -rf v2ray-plugin_linux_arm64
-chmod +x /usr/local/bin/v2ray-plugin
-chmod +x /usr/local/bin/gost-plugin
-chmod +x /usr/local/bin/xray-plugin
+#curl -sL "$v2rayplugin_link" -o v2ray-plugin.tar.gz
+#curl -sL "$gostplugin_link" -o gost-plugin.zip
+#curl -sL "$xrayplugin_link" -o xray-plugin.tar.gz
+#tar zxf xray-plugin.tar.gz && rm -rf xray-plugin.tar.gz
+#tar zxf v2ray-plugin.tar.gz && rm -rf v2ray-plugin.tar.gz
+#unzip -q gost-plugin.zip && rm -rf gost-plugin.zip
+#unzip -q v2ray.zip && rm -rf v2ray.zip
+#unzip -q xray.zip && rm -rf xray.zip
+#cp -r xray-plugin_linux_arm64 xray-plugin
+#cp -r v2ray-plugin_linux_arm64 v2ray-plugin
+#cp -r v2ray-plugin /usr/local/bin/v2ray-plugin
+#cp -r gost-plugin /usr/local/bin/gost-plugin
+#cp -r xray-plugin /usr/local/bin/xray-plugin
+#cp -r v2ray-plugin /usr/bin/v2ray-plugin
+#cp -r gost-plugin /usr/bin/gost-plugin
+#cp -r xray-plugin /usr/bin/xray-plugin
+#rm -rf xray-plugin_linux_arm64
+#rm -rf v2ray-plugin_linux_arm64
+#chmod +x /usr/local/bin/v2ray-plugin
+#chmod +x /usr/local/bin/gost-plugin
+##chmod +x /usr/local/bin/xray-plugin
 
 # // download
 cd /home/vps/public_html/
@@ -96,14 +96,14 @@ wget -O xray-plugin-universal.apk "https://raw.githubusercontent.com/fisabiliyus
 
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 # // Certificate File
-cd /root/
-rm -rf acme.sh
-rm -rf .acme.sh
-wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
-bash acme.sh --install
-rm acme.sh
-cd .acme.sh
-bash acme.sh --register-account -m clashteam.id@gmail.com
-bash acme.sh --issue --standalone -d $domain --force
-bash acme.sh --installcert -d $domain --fullchainpath /etc/shadowsocks/xray.crt --keypath /etc/shadowsocks/xray.key
+#cd /root/
+#rm -rf acme.sh
+#rm -rf .acme.sh
+#wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
+#bash acme.sh --install
+#rm acme.sh
+#cd .acme.sh
+#bash acme.sh --register-account -m clashteam.id@gmail.com
+#bash acme.sh --issue --standalone -d $domain --force
+#bash acme.sh --installcert -d $domain --fullchainpath /etc/shadowsocks/xray.crt --keypath /etc/shadowsocks/xray.key
 

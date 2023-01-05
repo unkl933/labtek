@@ -186,9 +186,9 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # install squid (proxy nya aku matikan)
 cd
-apt -y install squid3
-wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
-sed -i $MYIP2 /etc/squid/squid.conf
+#apt -y install squid3
+#wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
+#sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
 apt -y install sslh
@@ -281,10 +281,10 @@ connect = 127.0.0.1:1194
 END
 
 # make a certificate
-openssl genrsa -out key.pem 2048
-openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
--subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
-cat key.pem cert.pem >> /etc/stunnel5/stunnel5.pem
+#openssl genrsa -out key.pem 2048
+#openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
+#-subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
+#cat key.pem cert.pem >> /etc/stunnel5/stunnel5.pem
 
 # Service Stunnel5 systemctl restart stunnel5
 cat > /etc/systemd/system/stunnel5.service << END
@@ -316,7 +316,7 @@ rm -r -f /usr/local/etc/stunnel/
 rm -f /usr/local/bin/stunnel
 rm -f /usr/local/bin/stunnel3
 rm -f /usr/local/bin/stunnel4
-rm -f /usr/local/bin/stunnel5
+#rm -f /usr/local/bin/stunnel5
 
 # Restart Stunnel 5
 systemctl stop stunnel5
@@ -347,7 +347,7 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Install BBR
-wget https://${akbarvpn}/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+#wget https://${akbarvpn}/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # Ganti Banner
 wget -O /etc/issue.net "https://${akbarvpn}/issue.net"
