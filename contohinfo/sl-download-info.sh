@@ -19,7 +19,7 @@ wget -O info-exra-unli "https://raw.githubusercontent.com/unkl933/labtek/labtek/
 
 wget -O info-status-respon "https://raw.githubusercontent.com/unkl933/labtek/labtek/contohinfo/info-status-respon.sh"
 
-wget -O info-tsel-opok "https://raw.githubusercontent.com/unkl933/labtek/labtek/main/contohinfo/info-tsel-opok.sh"
+wget -O info-tsel-opok "https://raw.githubusercontent.com/unkl933/labtek/labtek/contohinfo/info-tsel-opok.sh"
 
 chmod +x info-cek-tersedia
 chmod +x info-contoh-payload
